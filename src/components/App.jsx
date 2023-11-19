@@ -3,6 +3,7 @@ import { ContactsList } from './ContactsList/ContactsList';
 import { ContactForm } from './ContactForm/ContactForm';
 import { v4 as uuidv4 } from 'uuid';
 import { Filter } from './Filter/Filter';
+import css from "./App.module.css"
 
 const INITIAL_STATE = {
   contacts: [
@@ -62,8 +63,9 @@ export class App extends Component {
   render() {
     const { filter } = this.state;
     return (
-      <div>
-        <h2>Phonebook</h2>
+      <div className={css.container}>
+        <h1 className={css.containerHeader}>Phonebook</h1>
+        <h2>Add contact</h2>
         <ContactForm onSubmit={this.handleSubmit} />
         <h2>Contacts</h2>
         <Filter filter={filter} handleChange={this.handleChange} />
